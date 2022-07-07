@@ -17,7 +17,12 @@ const Student = ({student}) => {
       {showBio && 
         <p>{student.bio}</p>
       }
-      <Score scores={student.scores}/>
+      {student.scores.map((score) => 
+        <Score
+          score={score.score}
+          date={score.date}
+        />
+      )}
     </div>
   );
 }
